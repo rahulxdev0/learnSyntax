@@ -7,11 +7,17 @@ const styles = StyleSheet.create({
       justifyContent: "space-between",
       alignItems: "center",
     },
+    skip: {
+      color: "gray",
+      textAlign: "right",
+      fontSize: 16,
+      fontWeight: "600",
+    },
     brandingContainer: {
       flex: 2,
       justifyContent: "center",
       alignItems: "center",
-      gap: 16,
+      gap: 14,
     },
     subtitle: {
       fontSize: 16,

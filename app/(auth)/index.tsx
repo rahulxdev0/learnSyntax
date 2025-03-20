@@ -4,11 +4,19 @@ import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../../assets/styles/login.styles";
 import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
+import { Link, Redirect } from "expo-router";
 
 export default function Login() {
   const { width } = Dimensions.get("window");
+
+  const moveToHOme = () => {
+    return <Redirect href="/(tabs)/course" />
+  }
   return (
     <LinearGradient colors={["F8F9FF", "#F8F9FF"]} style={styles.container}>
+      <View style={{ width: "90%" }}> 
+        <Link style={styles.skip} replace href="/(tabs)" >skip</Link>
+      </View>
       {/* Branding Section */}
       <View style={styles.brandingContainer}>
         <Image
@@ -32,7 +40,7 @@ export default function Login() {
       <View style={styles.authContainer}>
         <TouchableOpacity
           style={[styles.authButton, styles.googleButton]}
-          onPress={() => console.log("Google login")}
+          onPress={moveToHOme}
         >
           <Ionicons name="logo-google" size={24} color="#2D3748" />
           <Text style={styles.buttonText}>Continue with Google</Text>
@@ -40,7 +48,7 @@ export default function Login() {
 
         <TouchableOpacity
           style={[styles.authButton, styles.githubButton]}
-          onPress={() => console.log("GitHub login")}
+          onPress={() => moveToHOme}
         >
           <MaterialCommunityIcons name="github" size={24} color="white" />
           <Text style={[styles.buttonText, styles.githubButtonText]}>
