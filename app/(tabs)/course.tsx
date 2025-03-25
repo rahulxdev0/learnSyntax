@@ -3,10 +3,11 @@ import styles from "../../assets/styles/course.styles";
 import React from 'react'
 import { Image } from 'expo-image';
 import { Ionicons } from '@expo/vector-icons';
+import CourseCard, {CourseCardProps} from '@/components/CourseCard';
 
 const { width } = Dimensions.get('window');
 
-const courses = [
+const courses: CourseCardProps[] = [
   {
     id: '1',
     title: 'Laravel Fundamentals',
@@ -17,8 +18,8 @@ const courses = [
   },
   {
     id: '2',
-    title: 'MERN Stack: Build Modern Full-Stack Web Application',
-    instructor: 'Rahul Kumar',
+    title: 'Laravel Fundamentals',
+    instructor: 'Archana Kumari',
     duration: '8 Hours',
     difficulty: 'Intermediate',
     image: require('../../assets/images/mern.avif'),
@@ -69,13 +70,16 @@ export default function course() {
         <Text style={styles.searchInput}>Search courses...</Text>
       </View>
 
+      <View style={styles.container}>
       <FlatList
         data={courses}
         renderItem={renderCourseCard}
-        keyExtractor={item => item.id}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.listContent}
+        keyExtractor={(item) => item.id}
+        horizontal={true} // Set horizontal to true
+        showsHorizontalScrollIndicator={false} // Hide the horizontal scroll indicator
+        contentContainerStyle={styles.horizontalContainer} // Style for the container
       />
+    </View>
     </View>
   )
 }

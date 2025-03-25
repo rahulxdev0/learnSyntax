@@ -71,6 +71,20 @@ export default function _layout() {
           )
         }}
       />
+      <Tabs.Screen 
+        name='syntaxExpert' 
+        options={{
+          title: "SyntaxExpert",
+          tabBarIcon: ({ focused, color, size }) => (
+            <Ionicons 
+              name={focused ? 'person-sharp' : 'person-outline'} 
+              size={size} 
+              color={color} 
+            />
+          )
+        }}
+      />
+
     </Tabs>
   )
 }

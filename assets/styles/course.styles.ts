@@ -131,6 +131,28 @@ const styles = StyleSheet.create({
     listContent: {
       paddingBottom: 40,
     },
+    image: {
+      width: "100%",
+      height: 150, // Adjust height as needed
+    },
+    content: {
+      padding: 12, // Adjust padding as needed
+    },
+    title: {
+      fontSize: 16, // Adjust font size as needed
+      fontWeight: "600",
+      color: "#1E293B",
+      marginBottom: 8,
+    },
+    description: {
+      fontSize: 14, // Adjust font size as needed
+      color: "#64748B",
+      marginBottom: 12,
+    },
+    horizontalContainer: {
+      paddingBottom: 16, // Add padding to avoid cutting off the last item
+    },
+    
   });
 
 export default styles;
