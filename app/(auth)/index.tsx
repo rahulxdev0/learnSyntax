@@ -18,7 +18,7 @@ export default function Login() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const [request, response, promptAsync] = Google.useAuthRequest({
-    webClientId: process.env.GOOGLE_WEB_CLIENT_ID,
+    webClientId: ''
   })
 
   useEffect(() => {
