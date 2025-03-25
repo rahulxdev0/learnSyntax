@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     },
     authContainer: {
       width: "100%",
-      gap: 16,
+      gap: 5,
       marginBottom: 40,
     },
     authButton: {
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       paddingVertical: 16,
       borderRadius: 16,
-      gap: 12,
+      gap: 16,
       backgroundColor: "white",
       shadowColor: "#000",
       shadowOffset: { width: 0, height: 2 },

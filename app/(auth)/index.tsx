@@ -5,17 +5,20 @@ import { LinearGradient } from "expo-linear-gradient";
 import styles from "../../assets/styles/login.styles";
 import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
 import { Link, Redirect } from "expo-router";
+import AuthButton from "@/components/AuthButton";
 
 export default function Login() {
   const { width } = Dimensions.get("window");
 
   const moveToHOme = () => {
-    return <Redirect href="/(tabs)/course" />
-  }
+    return <Redirect href="/(tabs)/course" />;
+  };
   return (
     <LinearGradient colors={["F8F9FF", "#F8F9FF"]} style={styles.container}>
-      <View style={{ width: "90%" }}> 
-        <Link style={styles.skip} replace href="/(tabs)" >skip</Link>
+      <View style={{ width: "90%" }}>
+        <Link style={styles.skip} replace href="/(tabs)">
+          skip
+        </Link>
       </View>
       {/* Branding Section */}
       <View style={styles.brandingContainer}>
@@ -38,23 +41,23 @@ export default function Login() {
 
       {/* Auth Buttons */}
       <View style={styles.authContainer}>
-        <TouchableOpacity
-          style={[styles.authButton, styles.googleButton]}
+        <AuthButton
+          iconName="logo-google"
+          iconType="ionicons"
+          label="Continue with Google"
           onPress={moveToHOme}
-        >
-          <Ionicons name="logo-google" size={24} color="#2D3748" />
-          <Text style={styles.buttonText}>Continue with Google</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.authButton, styles.githubButton]}
-          onPress={() => moveToHOme}
-        >
-          <MaterialCommunityIcons name="github" size={24} color="white" />
-          <Text style={[styles.buttonText, styles.githubButtonText]}>
-            Continue with GitHub
-          </Text>
-        </TouchableOpacity>
+          buttonStyle={styles.googleButton}
+          textStyle={styles.buttonText}
+        />
+        <AuthButton
+          iconName="github"
+          iconType="material-community"
+          label="Continue with GitHub"
+          onPress={moveToHOme}
+          buttonStyle={styles.githubButton}
+          textStyle={[styles.buttonText, styles.githubButtonText]}
+          iconColor="white"
+        />
       </View>
 
       {/* Footer */}

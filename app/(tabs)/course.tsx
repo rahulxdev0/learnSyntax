@@ -13,7 +13,6 @@ const courses = [
     instructor: 'Archana Kumari',
     duration: '6 Hours',
     difficulty: 'Beginner',
-    progress: 0.4,
     image: require('../../assets/images/laraveli.webp'),
   },
   {
@@ -22,13 +21,12 @@ const courses = [
     instructor: 'Rahul Kumar',
     duration: '8 Hours',
     difficulty: 'Intermediate',
-    progress: 0.2,
     image: require('../../assets/images/mern.avif'),
   },
 ];
 
 export default function course() {
-  const renderCourseCard = ({ item }) => (
+  const renderCourseCard = ({ item } : any) => (
     <TouchableOpacity style={styles.cardContainer}>
       <Image
         source={item.image}
